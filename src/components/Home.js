@@ -39,7 +39,7 @@ const Home = (props) => {
         <hr style={{color: "#557A95", height: "2rem"}}/>
         <Information />
         <InformationCopy />
-        <hr style={{color: "#557A95", height: "2rem"}}/>
+        <hr style={{backgroundColor: "#557A95", height: "2rem"}}/>
         <Team />
         <Testimonials />
         <Footer />

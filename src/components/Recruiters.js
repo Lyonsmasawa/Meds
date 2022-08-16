@@ -57,7 +57,7 @@ const Recruiters = () => {
                         View applicants & connect with the qualified candidate.</p>
                 <div class="row align-items-center" style={{paddingTop: "20px"}}>
                 <div class="col">
-                    <button type="button" class="btn pri1" routerLink="">Sign up now</button>
+                    <button type="button" class="btn" style={{backgroundColor:"#ff9329", fontWeight:"bold", color:"white", fontSize: "16px"}} routerLink="">Sign up now</button>
                 </div>
                 </div>
             </div>

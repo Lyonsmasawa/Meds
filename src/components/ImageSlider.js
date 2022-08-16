@@ -60,6 +60,7 @@ const Wrap = styled.div`
     padding: 6px;
     cursor: pointer;
     position: relative;
+    
 
     a{
         border-radius: 4px;
@@ -73,7 +74,8 @@ const Wrap = styled.div`
             height: 44vh;
             width: 55vw;
             object-fit: cover;
-            opacity: 0.9;
+            opacity: 0.7;       
+            border: 6px solid #557A95;
         }
 
         &:hover {
@@ -91,8 +93,8 @@ const Wrap = styled.div`
 
                 <img src="/images/one.jpg" alt="" style={{flex: "1"}}/>
                 
-                <div className="texts"  style={{borderRadius: "8px"}}>
-                    <p style={{color : "black", fontSize: "26px"}}>At Express Care we<span style={{color: "#E2AA2E"}}> Serve </span>you better,<span style={{color: "#E2AA2E"}}> Expose</span> you more & <span  style={{color: "#E2AA2E"}}>Expand </span>your connections.</p>
+                <div className="texts"  style={{borderRadius: "8px", backgroundColor: "#557A95"}}>
+                    <p style={{color : "white", fontSize: "26px"}}>At Express Care we<span style={{color: "#E2AA2E"}}> Serve </span>you better,<span style={{color: "#E2AA2E"}}> Expose</span> you more & <span  style={{color: "#E2AA2E"}}>Expand </span>your connections.</p>
                 </div>
             </a>
         </Wrap>
@@ -100,8 +102,8 @@ const Wrap = styled.div`
             <a style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
                 <img src="/images/two.jpg" alt="" style={{flex: "1"}} />
                 
-                <div className="texts" style={{borderRadius: "8px"}}>
-                    <p style={{color: "black"}}>Get your <span style={{color: "#E2AA2E"}}>dream job</span> and approach <span style={{color: "#E2AA2E"}}>qualified caregivers</span> on our website.</p>
+                <div className="texts" style={{borderRadius: "8px", backgroundColor: "#557A95"}}>
+                    <p style={{color: "white"}}>Get your <span style={{color: "#E2AA2E"}}>dream job</span> and approach <span style={{color: "#E2AA2E"}}>qualified caregivers</span> on our website.</p>
                 </div>
             </a>
         </Wrap>
@@ -109,16 +111,16 @@ const Wrap = styled.div`
             <a style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
                 <img src="/images/three.jpg" alt="" style={{flex: "1"}} />
                 
-                <div className="texts"  style={{borderRadius: "8px"}}>
-                    <p style={{color: "black"}}>Join our growing <span style={{color: "#E2AA2E"}}>community</span> where we connect you to the right <span style={{color: "#E2AA2E"}}>job</span> or help you find<span style={{color: "#E2AA2E"}}> qualified candidates </span>for your job.</p>
+                <div className="texts"  style={{borderRadius: "8px", backgroundColor: "#557A95"}}>
+                    <p style={{color: "white"}}>Join our growing <span style={{color: "#E2AA2E"}}>community</span> where we connect you to the right <span style={{color: "#E2AA2E"}}>job</span> or help you find<span style={{color: "#E2AA2E"}}> qualified candidates </span>for your job.</p>
                 </div>
             </a>
         </Wrap>
         <Wrap>
             <a style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
                 <img src="/images/four.jpg" alt=""  style={{flex: "1"}}/>
-                <div className="texts"  style={{borderRadius: "8px"}}>
-                <p style={{color : "black", fontSize: "26px"}}>At Express Care we<span style={{color: "#E2AA2E"}}> Serve </span>you better,<span style={{color: "#E2AA2E"}}> Expose</span> you more & <span  style={{color: "#E2AA2E"}}>Expand </span>your connections.</p>
+                <div className="texts"  style={{borderRadius: "8px", backgroundColor: "#557A95"}}>
+                <p style={{color : "white", fontSize: "26px"}}>At Express Care we<span style={{color: "#E2AA2E"}}> Serve </span>you better,<span style={{color: "#E2AA2E"}}> Expose</span> you more & <span  style={{color: "#E2AA2E"}}>Expand </span>your connections.</p>
                 </div>
             </a>
         </Wrap>

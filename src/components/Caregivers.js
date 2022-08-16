@@ -34,35 +34,38 @@ const Recruiters = () => {
     <div class="container ">
         <div class="row align-items-start" style={{ color: "#557A95" }}>
             <div class="col-md-6">
+            <p class="jobseekers">
+            <h3>ARE YOU A COMPETENT  CAREGIVER<br/>LOOKING FOR A JOB?</h3><br/>
+            <p>The skills of a caregiver are necessary
+                for a patient to recieve best care possible.
+                We connect you with the  multiple caregiving 
+                agencies offering several job recruitment opportunities. </p>
+                <br/>
+                
+                <p>Create a unique career profile to boost your job recruitment 
+                    opportunities.Sign in your credentials to back up your skillls & 
+                    expertise to get started.</p>
+                <div class="row align-items-center" style={{paddingTop:"20px"}}>
+                
+                    <div class="col">
+                        <button type="button" style={{backgroundColor:"#ff9329", fontWeight:"bold", color:"white", fontSize: "16px"}} class="btn pri1" routerLink="/jobseeker/register">Sign up now</button>
+                    </div>
+                
+                </div>
+            </p>
+            </div>
+       
+   
+ 
+        <div class="col-md-6">
             <div class="row row-cols-2 container-fluid">
-                <div class="col one container-fluid"><img src="/images/care4-removebg-preview.png" class="img-fluid" alt="" style={{visibility: "hidden"}} /></div>
-                <div class="col two container-fluid"><img src="/images/logo3.png" class="img-fluid" alt="" /></div>
-                <div class="col two container-fluid"><img src="/images/caree1-removebg-preview.png" class="img-fluid" alt="" /></div>
-                <div class="col one container-fluid"><img src="/images/care4-removebg-preview.png" class="img-fluid" alt="" /></div>
-            </div>
-            </div>
-            <div class="col-md-6">
-            <div class="jobseekers">
-                <h3>MAKE A HIRE WE GOT THE REST</h3><br/>
-                <p>Looking to recruit a proficient caregiver for open job 
-                position in your agency.we connect you with several caregivers from diffrent places.How you go about hiring careproviders will partially depend on 
-                what kind of help you need. </p>
-                    <br/>
-                    
-                    <p>Make sure to have credential
-                    to verify that you are a certified caregiving agency.
-                    Job available and requirements need for one to qualify for hire.</p>
-                    <br/>
-                    <p>Advertise your job posting for applicants on our page to apply.
-                        View applicants & connect with the qualified candidate.</p>
-                <div class="row align-items-center" style={{paddingTop: "20px"}}>
-                <div class="col">
-                    <button type="button" class="btn pri1" routerLink="">Sign up now</button>
-                </div>
-                </div>
-            </div>
+            <div class="col one container-fluid"><img src="/images/caree1-removebg-preview.png" class="img-fluid" alt="" /></div>
+            <div class="col two container-fluid"><img src="/images/care2-removebg-preview.png" class="img-fluid" alt=""/></div>
+            <div class="col two container-fluid"><img src="/images/care-removebg-preview.png" class="img-fluid" alt=""/></div>
+            <div class="col one container-fluid"><img src="/images/care4-removebg-preview.png" class="img-fluid" alt=""/></div>
             </div>
         </div>
+    </div>
     </div>
     <Footer />
     </Container>
