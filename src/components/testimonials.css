@@ -1,17 +1,18 @@
 #testimonials {
     width: 100%;    
     background-color: white;
-    color: var(--color-bg);
+    color: white;
     padding: 1rem;
-    transition: var(--transition);
+    transition: 204ms infinite ease;
 }
 
 #testimonials h5 {
-    color: var(--color-bg);
+    color: #ff9329;
 }
 
 #testimonials h2{
-    color: var(--color-bg) !important;
+    margin-top: 1rem;
+    color: #557A95 !important;
     font-weight: 600;
 }
 
@@ -26,11 +27,16 @@
     overflow: hidden;
     border-radius: 50%;
     margin: 0 auto 1rem;
-    border: 0.4rem solid var(--color-primary-variant);
+    border: 0.15rem solid #ff9329;
 }
 
+.client__avatar img{
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
+}
 .testimonials {
-    background: var(--color-bg-variant);
+    background: #557A95;
     text-align: center;
     padding: 2rem;
     border-radius: 2rem;
@@ -38,11 +44,10 @@
 }
 
 .client__name {
-    color: var(--color-white) !important;
+    color: white !important;
 }
 
 .client__review {
-    color: var(--color-light);
     display: block;
     font-weight: 300;
     width: 80%;
@@ -50,8 +55,8 @@
 }
 
 .swiper-pagination-clickable .swiper-pagination-bullet {
-    background: var(--color-bg-variant);
-    padding: .5rem;
+    background: #ff9329;
+    padding: .35rem;
 }
 
 @media screen and (max-width: 1024px) {
@@ -62,11 +67,11 @@
 
 @media screen and (max-width: 600px) {
     .container.testimonials__container {
-        width: var(--container-width-sm) !important;
+        width: 98% !important;
     }   
 
     .client__review {
-        width: var(--container-width-sm) !important;
+        width: 98% !important;
     }   
 }
 

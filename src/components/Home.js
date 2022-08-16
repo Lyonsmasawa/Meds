@@ -6,6 +6,7 @@ import Information from './Information'
 import InformationCopy from './Informationcopy'
 import Stats from './Stats'
 import Team from './Team'
+import Testimonials from './Testimonials'
 
 const Container = styled.main`
     position: relative;
@@ -38,6 +39,7 @@ const Home = (props) => {
         <Information />
         <InformationCopy />
         <Team />
+        <Testimonials />
         <Footer />
     </Container>
   )

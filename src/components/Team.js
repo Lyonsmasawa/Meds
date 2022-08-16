@@ -21,13 +21,13 @@ const Team = () => {
                     </div>
                     <div class="team-hover">
                         <div class="desk">
-                            <h4>Hi There !</h4>
-                            <p>I love to introduce myself as a hardcore Web Designer.</p>
+                            <h4>I am a fun person</h4>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam delectus quae numquam commodi sed aspernatur placeat inventore quis, error maxime itaque perferendis ipsam ratione consequatur? Voluptatum nostrum quidem debitis quae!</p>
                         </div>
                         <div class="s-link">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-google-plus"></i></a>
                         </div>
                     </div>
                 </div>
@@ -42,14 +42,14 @@ const Team = () => {
                         <img src="https://image.freepik.com/free-photo/elegant-man-with-thumbs-up_1149-1595.jpg" alt="team member" class="img-responsive" />
                     </div>
                     <div class="team-hover">
-                        <div class="desk">
-                            <h4>Hello World</h4>
-                            <p>I love to introduce myself as a hardcore Web Designer.</p>
+                    <div class="desk">
+                            <h4>I am a fun person</h4>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam delectus quae numquam commodi sed aspernatur placeat inventore quis, error maxime itaque perferendis ipsam ratione consequatur? Voluptatum nostrum quidem debitis quae!</p>
                         </div>
                         <div class="s-link">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-google-plus"></i></a>
                         </div>
                     </div>
                 </div>
@@ -65,13 +65,13 @@ const Team = () => {
                     </div>
                     <div class="team-hover">
                         <div class="desk">
-                            <h4>I love to design</h4>
-                            <p>I love to introduce myself as a hardcore Web Designer.</p>
+                            <h4>I am a fun person</h4>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam delectus quae numquam commodi sed aspernatur placeat inventore quis, error maxime itaque perferendis ipsam ratione consequatur? Voluptatum nostrum quidem debitis quae!</p>
                         </div>
                         <div class="s-link">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-google-plus"></i></a>
                         </div>
                     </div>
                 </div>
