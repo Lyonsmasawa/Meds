@@ -26,7 +26,27 @@ a {
 .para {
   color:#000000;
 }
+.texts{
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  padding: 1rem;
+  font-weight: bold;
+  color: #557A95;
+  background-color: rgba(255, 255, 255, 0.733);
+  font-size: 24px;
+  align-self: center;
+}
 
+.whys {
+
+}
+.shadow {
+  box-shadow: 4px 4px 8px #557A95;
+  background-color: white !important;
+  padding: 0px 8px;
+  border-radius: 8px;
+}
 @media only screen and (min-width: 768px) {
   body {
     font-size: 16px;

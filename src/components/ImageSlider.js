@@ -73,7 +73,7 @@ const Wrap = styled.div`
             height: 35vh;
             width: 55vw;
             object-fit: cover;
-            opacity: 0.4;
+            opacity: 0.6;
         }
 
         &:hover {
@@ -90,21 +90,37 @@ const Wrap = styled.div`
             <a style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
 
                 <img src="/images/one.jpg" alt="" style={{flex: "1"}}/>
-                </a>
+                
+                <div className="texts">
+                    <p>Join our growing community where we connect you to the right job or help you find qualified candidates for your job.</p>
+                </div>
+            </a>
         </Wrap>
         <Wrap>
             <a style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
                 <img src="/images/two.jpg" alt="" style={{flex: "1"}} />
+                
+                <div className="texts">
+                    <p>Join our growing community where we connect you to the right job or help you find qualified candidates for your job.</p>
+                </div>
             </a>
         </Wrap>
         <Wrap>
             <a style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
                 <img src="/images/three.jpg" alt="" style={{flex: "1"}} />
+                
+                <div className="texts">
+                    <p>Join our growing community where we connect you to the right job or help you find qualified candidates for your job.</p>
+                </div>
             </a>
         </Wrap>
         <Wrap>
             <a style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
                 <img src="/images/four.jpg" alt=""  style={{flex: "1"}}/>
+                
+                <div className="texts">
+                    <p>Join our growing community where we connect you to the right job or help you find qualified candidates for your job.</p>
+                </div>
             </a>
         </Wrap>
     </Carousel>

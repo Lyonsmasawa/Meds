@@ -1,6 +1,11 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
+import Footer from './Footer'
 import ImageSlider from './ImageSlider'
+import Information from './Information'
+import InformationCopy from './Informationcopy'
+import Stats from './Stats'
+import Team from './Team'
 
 const Container = styled.main`
     position: relative;
@@ -8,7 +13,7 @@ const Container = styled.main`
     overflow-x: hidden;  
     display: block;
     top: 72px;
-    padding: 0 calc(1vw + 2px);
+    /* padding: 0 calc(1vw + 2px); */
 
     &:after {
         background: url("/images/home-background.png") center center / cover no-repeat fixed;
@@ -29,6 +34,11 @@ const Home = (props) => {
   return (
     <Container>
         <ImageSlider />
+        <Stats />
+        <Information />
+        <InformationCopy />
+        <Team />
+        <Footer />
     </Container>
   )
 }

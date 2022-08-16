@@ -3,9 +3,7 @@ import styled from "styled-components"
 import { AcUnit, HomeOutlined, Search, GroupAdd, WorkOutline } from '@material-ui/icons/';
 import SupervisedUserCircleIcon from '@material-ui/icons/SupervisedUserCircle';
 import { keyframes } from "styled-components";
-import { useState } from "react";
-import { Avatar } from "@material-ui/core";
-import logo from '../images/logo3.png'
+import logo from './logo3.png'
 
 const Nav = styled.nav`
     position: fixed;
