@@ -15,7 +15,7 @@ const ImageSlider = () => {
 
 const Carousel = styled(Slider)`
     margin-top: 5px;
-    height: 38vh;
+    height: 46vh;
 
     & > button {
         opacity: 1;
@@ -55,7 +55,7 @@ const Carousel = styled(Slider)`
 `;
 
 const Wrap = styled.div`
-    height: 35vh;
+    height: 44vh;
     border-radius: 4px;
     padding: 6px;
     cursor: pointer;
@@ -70,10 +70,10 @@ const Wrap = styled.div`
         padding: 4px;
 
         img{
-            height: 35vh;
+            height: 44vh;
             width: 55vw;
             object-fit: cover;
-            opacity: 0.6;
+            opacity: 0.9;
         }
 
         &:hover {
@@ -92,7 +92,8 @@ const Wrap = styled.div`
                 <img src="/images/one.jpg" alt="" style={{flex: "1"}}/>
                 
                 <div className="texts">
-                    <p>Join our growing community where we connect you to the right job or help you find qualified candidates for your job.</p>
+                    <p style={{textAlign: ""}}>Get your dream job and approach qualified caregivers on our website.
+                        <br />Join our growing community where we connect you to the right job or help you find qualified candidates for your job.</p>
                 </div>
             </a>
         </Wrap>
@@ -101,7 +102,8 @@ const Wrap = styled.div`
                 <img src="/images/two.jpg" alt="" style={{flex: "1"}} />
                 
                 <div className="texts">
-                    <p>Join our growing community where we connect you to the right job or help you find qualified candidates for your job.</p>
+                    <p style={{textAlign: ""}}>Get your dream job and approach qualified caregivers on our website.
+                        <br />Join our growing community where we connect you to the right job or help you find qualified candidates for your job.</p>
                 </div>
             </a>
         </Wrap>
@@ -110,16 +112,17 @@ const Wrap = styled.div`
                 <img src="/images/three.jpg" alt="" style={{flex: "1"}} />
                 
                 <div className="texts">
-                    <p>Join our growing community where we connect you to the right job or help you find qualified candidates for your job.</p>
+                    <p style={{textAlign: ""}}>Get your dream job and approach qualified caregivers on our website.
+                        <br />Join our growing community where we connect you to the right job or help you find qualified candidates for your job.</p>
                 </div>
             </a>
         </Wrap>
         <Wrap>
             <a style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
                 <img src="/images/four.jpg" alt=""  style={{flex: "1"}}/>
-                
                 <div className="texts">
-                    <p>Join our growing community where we connect you to the right job or help you find qualified candidates for your job.</p>
+                    <p style={{textAlign: ""}}>Get your dream job and approach qualified caregivers on our website.
+                        <br />Join our growing community where we connect you to the right job or help you find qualified candidates for your job.</p>
                 </div>
             </a>
         </Wrap>

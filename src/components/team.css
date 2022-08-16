@@ -126,11 +126,18 @@
 
 .wrapper {
     margin-top: 2rem;
-    padding: 2rem 0px; 
+    display: flex;
+
 }
+
 h1 {
-    animation: text-shadow 1.5s ease-in-out infinite;
-    font-size: 5em;
+    font-size: 4em;
+    font-weight: 600;
+    /* line-height: 1; */
+}
+
+.coll{
+    text-align: left;
+    /* color: #557A95; */
     font-weight: 800;
-    line-height: 1;
 }

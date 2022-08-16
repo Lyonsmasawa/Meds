@@ -34,8 +34,8 @@ const Footer = () => {
         <div className="container">
             <div className="row">
                 <div className="col-md-8 col-sm-6 col-xs-12">
-                    <p className="copyright-text">Copyright &copy; <span style={{color: "white"}}>2022</span> All Rights Reserved by
-                    <span style={{color: "white"}}> Express Care</span>
+                    <p className="copyright-text">Copyright &copy; <span style={{color: "#ff9329"}}>2022</span> All Rights Reserved by
+                    <span style={{color: "#ff9329"}}> Express Care</span>
                     </p>
                 </div>
 

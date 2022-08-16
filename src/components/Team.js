@@ -3,12 +3,40 @@ import './team.css'
 
 const Team = () => {
   return (
-    <div>
-        <div class="row">
-            <div className="wrapper">
-                <h1 style={{color: "black"}}>"At Express Care we<span style={{color: "#E2AA2E"}}> Serve </span>you better,<span style={{color: "#E2AA2E"}}> Expose</span> you more & <span  style={{color: "#E2AA2E"}}>Expand </span>your connections."</h1>
-                <br/>
+    <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+        <div className="wrapper" style={{}}>
+            <h1 style={{color: "black", flex: "2", borderRadius: "5px", boxShadow:"0px 2px 8px #557A95", gap:"1rem", marginLeft: "2rem", marginTop: "2rem", padding: "1rem"}}>"At Express Care we<span style={{color: "#E2AA2E"}}> Serve </span>you better,<span style={{color: "#E2AA2E"}}> Expose</span> you more & <span  style={{color: "#E2AA2E"}}>Expand </span>your connections."</h1>
+            <div class="row" style={{ flex: "2",marginLeft: "1rem", marginRight: "1rem", backgroundColor:"#557A95",  padding: "60px", color: "white",}}>
+                <h2 style={{color: "white", fontWeight: "bolder", marginBottom:"2rem"}}>What we offer you as a caregiver. . .</h2>
+                <div class="col" className="coll" >
+                    <h5>CV Writing - 90%</h5>
+                    <div class="progress red">
+                        <div class="progress-bar" style={{width: "90%",  backgroundColor:"#2E3C5B"}}>
+                        </div>
+                    </div>
+                    <br/>
+                    <h5>Mentorship - 50%</h5>
+                    <div class="progress green">
+                        <div class="progress-bar" style={{width: "50%",  backgroundColor:"#E2AA2E"}}>
+                        </div>
+                    </div>
+                    <br/>
+                    <h5>Company Placement - 80%</h5>
+                    <div class="progress blue">
+                        <div class="progress-bar" style={{width: "80%",  backgroundColor:"#2E3C5B"}}>
+                        </div>
+                    </div>
+                    <br/>
+                    <h5>Global Internships - 65%</h5>
+                    <div class="progress yellow">
+                        <div class="progress-bar" style={{width: "65%",  backgroundColor:"#E2AA2E"}}>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+        
+        <div class="row" style={{width: "80%", marginTop: "2rem",}}>
             <div class="heading-title text-center">
                 <h3 class="text-uppercase">Meet Our Team </h3>
                 <p class="p-top-30 half-txt"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, at odio! Officiis perferendis, deleniti repudiandae suscipit dolorum nulla nisi, veritatis iure eaque blanditiis officia nesciunt rem voluptate illum enim vero? </p>

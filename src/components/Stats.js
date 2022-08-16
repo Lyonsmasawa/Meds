@@ -29,7 +29,7 @@ const Stats = () => {
             right: 0px;
             bottom: 0px;
             left: 0px;
-            opacity: 0.12;
+            opacity: 0.08;
         }
     `
 
