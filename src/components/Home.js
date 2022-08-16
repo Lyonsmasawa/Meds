@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Footer from './Footer'
 import ImageSlider from './ImageSlider'
@@ -36,8 +36,10 @@ const Home = (props) => {
     <Container>
         <ImageSlider />
         <Stats />
+        <hr style={{color: "#557A95", height: "2rem"}}/>
         <Information />
         <InformationCopy />
+        <hr style={{color: "#557A95", height: "2rem"}}/>
         <Team />
         <Testimonials />
         <Footer />

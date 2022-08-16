@@ -7,7 +7,7 @@ import logo from './logo3.png'
 
 const Nav = styled.nav`
     position: fixed;
-    background-color: white;
+    background-color: #557A95;
     color: #FF9923;
     display: flex;
     justify-content: space-between;
@@ -187,13 +187,13 @@ const SignOut = styled.div`
    return (
      <Nav>
         <Logo>
-            <img src={logo} alt="ExpressCare" />
+            <Link to="/"><img src={logo} alt="ExpressCare" /></Link>
         </Logo>
         <NavMenu>
             <Rotate><AcUnit /></Rotate>
-            <Link to="/home" style={MenuLinks}><SupervisedUserCircleIcon style={MenuIcon} /><Span>Caregivers</Span></Link>
-            <Link to="/home" style={MenuLinks}><GroupAdd style={MenuIcon} /><Span>Recruiters</Span></Link>
-            <Link to="/home" style={MenuLinks}><WorkOutline style={MenuIcon} /><Span>Careers</Span></Link>
+            <Link to="/caregivers" style={MenuLinks}><SupervisedUserCircleIcon style={MenuIcon} /><Span>Caregivers</Span></Link>
+            <Link to="/recruiters" style={MenuLinks}><GroupAdd style={MenuIcon} /><Span>Recruiters</Span></Link>
+            <Link to="/" style={MenuLinks}><WorkOutline style={MenuIcon} /><Span>Careers</Span></Link>
             <Rotate><AcUnit /></Rotate>
         </NavMenu>
         <>

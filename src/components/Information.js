@@ -7,6 +7,8 @@ const Information = () => {
         /* flex-direction: column; */
         /* align-items: center; */
         justify-content: flex-end;
+        padding-left: 3rem;
+        margin-bottom: 1rem;
     `
 
     const Information = styled.div`

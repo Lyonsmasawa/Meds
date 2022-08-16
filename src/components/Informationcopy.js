@@ -6,6 +6,8 @@ const InformationCopy = () => {
         display: flex;
         /* flex-direction: column; */
         /* align-items: center; */
+        padding-right: 3rem;
+        margin-bottom: 1rem;
         justify-content: flex-start;
     `
 
