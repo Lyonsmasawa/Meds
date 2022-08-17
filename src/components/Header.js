@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom"
 import styled from "styled-components"
-import { AcUnit, HomeOutlined, Search, GroupAdd, WorkOutline } from '@material-ui/icons/';
+import { AcUnit, HomeOutlined, Search, GroupAdd, WorkOutline, HomeWorkOutlined } from '@material-ui/icons/';
 import SupervisedUserCircleIcon from '@material-ui/icons/SupervisedUserCircle';
 import { keyframes } from "styled-components";
 import logo from './logo3.png'
@@ -206,6 +206,7 @@ const SignOut = styled.div`
         </Logo>
         <NavMenu>
             <Rotate><AcUnit /></Rotate>
+            <Link to="/" style={MenuLinks}><HomeWorkOutlined style={MenuIcon} /><Span>Home</Span></Link>
             <Link to="/caregivers" style={MenuLinks}><SupervisedUserCircleIcon style={MenuIcon} /><Span>Caregivers</Span></Link>
             <Link to="/recruiters" style={MenuLinks}><GroupAdd style={MenuIcon} /><Span>Recruiters</Span></Link>
             <Link to="/" style={MenuLinks}><WorkOutline style={MenuIcon} /><Span>Careers</Span></Link>

@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Recruiters from './components/Recruiters';
 import SignUp from './components/SignUp';
+import SignUpForm from './components/SignUpForm';
 
 function App() {
   return (
@@ -13,10 +14,13 @@ function App() {
       <Router>
         < Header />
         <Routes>
-          <Route path="/SignUp" element={ <SignUp /> }></Route>
+          <Route path="/signUp" element={ <SignUp /> }></Route>
           <Route path="/login" element={ <Login /> }></Route>
+          <Route path='/signupform' element={ <SignUpForm />}></Route>
+          <Route path='/' element={<Home /> }></Route>
           <Route path='/recruiters' element={ <Recruiters /> }></Route>
           <Route path='/caregivers' element={ <Caregivers /> }></Route>
+          <Route path="*">Oops! page not found.</Route>
         </Routes>
       </Router>
     </div>

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Footer from './Footer'
 import './logins.css'
 
-const Login = () => {
+const SignUpForm = () => {
   const [option, setOption] = React.useState(2);
 
   const Full = styled.div`
@@ -14,7 +14,7 @@ const Login = () => {
     min-height: calc(100vh - 82px);
     margin-top: 82px; 
   `
-  const Login = styled.div`
+  const SignUpForm = styled.div`
         /* position: relative; */
         /* min-height: calc(100vh - 82px); */
         background: #557A95;
@@ -37,16 +37,16 @@ const Login = () => {
   
 
   // return (
-  //   <Login>
+  //   <SignUpForm>
       
   //     {/* <div style={{marginTop: "1rem"}}>
   //       <Footer />
   //     </div> */}
-  //   </Login>
+  //   </SignUpForm>
   // )
   return (
     <Full>
-      <Login>
+      <SignUpForm>
           <div className="alls">
             <div className="container">
               <br />
@@ -95,10 +95,10 @@ const Login = () => {
               </button>
             </form>
           </div>
-      </Login>
+      </SignUpForm>
       <Footer />
     </Full>
 	);
 }
 
-export default Login
+export default SignUpForm

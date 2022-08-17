@@ -1,0 +1,179 @@
+.alls {
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 350px;
+}
+.alls .container {
+    text-align: center;
+    color: #ff9329;
+}
+
+.alls .container>header {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 auto 20px auto;
+    position: relative;
+    color: #ff9329;
+    height: 40px;
+    width: 250px;
+    overflow: hidden;
+}
+
+.header-headings {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.alls .header-headings>span {
+    margin: 3px 0;
+}
+
+.alls .header-headings.sign-in {
+    transform: translateY(0);
+}
+
+.alls .header-headings.sign-up {
+    transform: translateY(-25px);
+}
+
+.alls .header-headings.forgot {
+    transform: translateY(-50px);
+}
+
+.alls .options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    /* width: 100%; */
+    width: 340px;
+    padding: 0px 10px 0px 0px;
+    /* background-color: #fff; */
+}
+
+@media screen and (max-width: 380px) {
+    .options {
+        width: 100%;
+    }
+}
+
+.alls .options>li {
+    cursor: pointer;
+    opacity: 0.8;
+    border: 1px solid #ff9329;
+    padding: 5px;
+    transition: all 0.2s ease;
+}
+
+.alls .options>li:hover {
+    opacity: 1;
+}
+
+.alls .options>li.active {
+    opacity: 1;
+    color: #fff;
+    /* background-color: #fff; */
+    border: 3px solid #fff;
+    padding: 3px 7px;
+    border-radius: 2px;
+}
+
+.alls .options>li:nth-of-type(2) {
+    margin-left: 15px;
+}
+
+.alls .options>li:last-of-type {
+    margin-left: auto;
+}
+
+.alls .account-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.alls .account-form-fields {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.alls .account-form-fields.sign-in {
+    max-height: 123px;
+}
+
+.alls .account-form-fields.sign-up {
+    max-height: 250px;
+}
+
+.alls .account-form-fields.forgot {
+    max-height: 61px;
+}
+
+.alls .account-form-fields>input {
+    border: 0;
+    margin-bottom: 10px;
+    padding: 15px;
+    font-size: 1rem;
+    font-family: Nunito, sans-serif;
+    color: #557A95;
+    border-radius: 5px;
+}
+
+.alls .account-form-fields>input::-moz-placeholder {
+    color: #aaa;
+}
+
+.alls .account-form-fields>input:-ms-input-placeholder {
+    color: #aaa;
+}
+
+.alls .account-form-fields>input::placeholder {
+    color: #aaa;
+}
+
+.alls .account-form-fields>input::-webkit-input-placeholder {
+    color: #aaa;
+}
+
+.alls .account-form-fields>input:-ms-input-placeholder {
+    color: #aaa;
+}
+
+.account-form-fields>input:focus {
+    outline: none;
+}
+
+.alls .btn-submit-form {
+    border: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    padding: 12px 0;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.2rem;
+    background: #ff9329;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.13);
+    transition: all 0.2s ease;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.alls .btn-submit-form:hover {
+    background: #557A95;
+}
+
+.alls .btn-submit-form:active,
+.btn-submit-form:focus {
+    outline: none;
+    background: #557A95;
+}
