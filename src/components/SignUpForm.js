@@ -50,7 +50,7 @@ const SignUpForm = () => {
           <div className="alls">
             <div className="container">
               <br />
-              <img src="/images/logo2.png" alt="" />
+              <img src="/images/logo2.png" alt="" style={{opacity: ".9"}}/>
               <hr />
               <ul className="options">
                 <li className={option === 1 ? "active" : ""} onClick={() => setOption(1)}>

@@ -4,7 +4,7 @@ import Footer from './Footer'
 import './logins.css'
 
 const Login = () => {
-  const [option, setOption] = React.useState(2);
+  const [option, setOption] = React.useState(1);
 
   const Full = styled.div`
     display: flex;
@@ -50,14 +50,11 @@ const Login = () => {
           <div className="alls">
             <div className="container">
               <br />
-              <img src="/images/logo2.png" alt="" />
+              <img src="/images/logo2.png" alt="" style={{opacity: ".9"}}/>
               <hr />
               <ul className="options">
                 <li className={option === 1 ? "active" : ""} onClick={() => setOption(1)}>
                   Sign in
-                </li>
-                <li className={option === 2 ? "active" : ""} onClick={() => setOption(2)}>
-                  Sign up
                 </li>
                 <li className={option === 3 ? "active" : ""} onClick={() => setOption(3)}>
                   Forgot

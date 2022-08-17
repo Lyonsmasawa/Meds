@@ -9,6 +9,7 @@ const Footer = () => {
                 <div className="col-sm-12 col-md-5">
                     <h6 className=''>About</h6>
                     <p className="text-justify pe-5 pt-3">Millions of people are searching for jobs, salary information, company reviews, and interview questions. WorkLinks makes it possible for caregivers to be considered for employment. </p>
+                    <img src="/images/logo2.png" alt="" style={{opacity: ".4"}}/>
                 </div>
 
                 <div className="col-xs-6 col-md-3">
