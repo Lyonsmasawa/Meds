@@ -1,0 +1,48 @@
+.logins {
+  padding-top: 2rem;
+}
+
+.p-3 {
+  padding: 8rem;
+}
+
+.con {
+  display: flex;
+  justify-content: center;
+}
+
+.logins .icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 6px #557a95;
+  background-color: #ff9823;
+  font-size: 35px;
+  color: #557A95;
+
+}
+
+#signb {
+  /* background-color: #FF9923; */
+  box-shadow: 0px 2px 4px #557a95;
+  color: white;
+  background-color: #ff9823;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+#signb:hover {
+  background-color: white;
+  color: #ff9823;
+}
+
+.logins .row{
+  gap: 1rem;
+}
+
+.logins .border {
+  margin-top: 2rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  box-shadow: 0px 0px 4px #557A95;
+}

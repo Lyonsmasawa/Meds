@@ -107,7 +107,8 @@ const Login = styled.a`
     padding: 5px 11px;
     text-transform: uppercase;
     border: 1px solid #ff9923;
-    border-radius: 4px;
+    border-radius: 2px 0px 0px 2px;
+    border-right: 0px;
     letter-spacing: 1.5px;
     transition: all 0.2s ease 0s;
     color: #FF9923;
@@ -158,6 +159,20 @@ const DropDown = styled.div`
     box-shadow: 0px 2px 8px  #0063e5;
     opacity: 0;
 `
+const SignUp = styled(Login)`
+    text-transform: uppercase;
+    border: 1px solid #ff9923;
+    border-radius: 0px 2px 2px 0px;
+    letter-spacing: 1.5px;
+    transition: all 0.2s ease 0s;
+    color: #FF9923;
+    font-weight: bold;
+
+    &:hover{
+        background-color: #fff;
+        color: black;
+    }
+`
 
 const SignOut = styled.div`
   position: relative;
@@ -197,8 +212,8 @@ const SignOut = styled.div`
             <Rotate><AcUnit /></Rotate>
         </NavMenu>
         <>
-            <Link to="/home" style={MenuLinks}><Search style={MenuIcon} /><Span></Span></Link>
-            <Login>Log in</Login>
+            <Link to="/login"><Login>Log in</Login></Link>
+            <Link to="/signup"><SignUp>SignUp</SignUp></Link>
         </>
                 {/* <SignOut>
                     {/* <UserImage src={Avatar} alt="" />

@@ -74,7 +74,7 @@ const Wrap = styled.div`
             height: 44vh;
             width: 55vw;
             object-fit: cover;
-            opacity: 0.7;       
+            opacity: 0.8;       
             border: 6px solid #557A95;
         }
 
