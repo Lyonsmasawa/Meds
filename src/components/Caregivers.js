@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link, useNavigate } from "react-router-dom"
 import Footer from './Footer'
 
 const Container = styled.main`
@@ -59,10 +60,10 @@ const Recruiters = () => {
  
         <div class="col-md-6">
             <div class="row row-cols-2 container-fluid">
-            <div class="col one container-fluid"><img src="/images/caree1-removebg-preview.png" class="img-fluid" alt="" /></div>
-            <div class="col two container-fluid"><img src="/images/care2-removebg-preview.png" class="img-fluid" alt=""/></div>
-            <div class="col two container-fluid"><img src="/images/care-removebg-preview.png" class="img-fluid" alt=""/></div>
-            <div class="col one container-fluid"><img src="/images/care4-removebg-preview.png" class="img-fluid" alt=""/></div>
+                <div class="col one container-fluid"><img src="/images/care4-removebg-preview.png" class="img-fluid" alt="" style={{visibility: "hidden"}} /></div>
+                <div class="col two container-fluid"><img src="/images/logo3.png" class="img-fluid" alt="" /></div>
+                <div class="col two container-fluid"><img src="/images/caree1-removebg-preview.png" class="img-fluid" alt="" /></div>
+                <div class="col one container-fluid"><img src="/images/care4-removebg-preview.png" class="img-fluid" alt="" /></div>
             </div>
         </div>
     </div>

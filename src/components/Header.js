@@ -104,14 +104,15 @@ const  MenuIcon ={
 }
 
 const Login = styled.a`
-    padding: 5px 11px;
+    padding: 7px 15px;
     text-transform: uppercase;
-    border: 1px solid #ff9923;
+    border: 1px solid #fff;
     border-radius: 2px 0px 0px 2px;
     border-right: 0px;
     letter-spacing: 1.5px;
     transition: all 0.2s ease 0s;
     color: #FF9923;
+    background-color: white;
     font-weight: bold;
 
     &:hover{
@@ -161,11 +162,12 @@ const DropDown = styled.div`
 `
 const SignUp = styled(Login)`
     text-transform: uppercase;
-    border: 1px solid #ff9923;
+    border: 2px solid #ff9923;
     border-radius: 0px 2px 2px 0px;
     letter-spacing: 1.5px;
     transition: all 0.2s ease 0s;
-    color: #FF9923;
+    background-color: #FF9923;
+    color: white;
     font-weight: bold;
 
     &:hover{

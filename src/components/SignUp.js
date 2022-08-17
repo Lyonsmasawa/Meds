@@ -38,7 +38,7 @@ const SignUp = () => {
                 Create a unique career profile with Express Team Care
               </p>
 
-              <button class="btn " id="signb"> <Link to="/signUpForm"> Sign Up as Caregiver </Link></button>
+              <button class="btn " id="signb"> <Link to="/signup"> Sign Up as Caregiver </Link></button>
             </div>
           </div>
           <div class="col">
@@ -56,7 +56,7 @@ const SignUp = () => {
                 Advertise and search with Express Team Care
               </p>
              
-             <button class="btn " id="signb"> <Link to="/signUpForm"> Sign Up as Recruiter</Link></button>
+             <button class="btn " id="signb"> <Link to="/signup"> Sign Up as Recruiter</Link></button>
             </div>
           </div>
         </div>

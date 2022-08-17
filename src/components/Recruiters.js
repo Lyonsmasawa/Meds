@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Footer from './Footer'
+import { Link, useNavigate } from "react-router-dom"
 
 const Container = styled.main`
     position: relative;
@@ -57,7 +58,7 @@ const Recruiters = () => {
                         View applicants & connect with the qualified candidate.</p>
                 <div class="row align-items-center" style={{paddingTop: "20px"}}>
                 <div class="col">
-                    <button type="button" class="btn" style={{backgroundColor:"#ff9329", fontWeight:"bold", color:"white", fontSize: "16px"}} routerLink="">Sign up now</button>
+                    <button type="button" class="btn" style={{backgroundColor:"#ff9329", fontWeight:"bold", color:"white", fontSize: "16px"}} routerLink=""><Link to="/signup"> Sign up now </Link></button>
                 </div>
                 </div>
             </div>
