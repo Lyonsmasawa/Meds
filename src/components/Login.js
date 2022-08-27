@@ -3,8 +3,13 @@ import styled from 'styled-components'
 import Footer from './Footer'
 import './logins.css'
 import AuthContext from '../context/AuthProvider'
+import axios from '../api/axios'
+
+const LOGIN_URL = '/auth/login'
+
 
 const Login = () => {
+  const effectRan = useRef(false)
   const { setAuth } = useContext(AuthContext);
   const [option, setOption] = useState(1);
   const userRef = useRef();
@@ -16,7 +21,14 @@ const Login = () => {
   const [success, setSuccess] = useState(false);
 
   useEffect(() => {
-    userRef.current.focus();
+    if(effectRan.current === false){
+      userRef.current.focus();
+    }
+
+    return () => {
+      console.log("122")
+      effectRan.current = true;
+    }
   }, [])
   
   useEffect(() => {
@@ -26,11 +38,30 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     console.log(user, pwd);
-    setUser('');
-    setPwd('');
-    setSuccess(true);
-  }
 
+    try {
+      const response = await axios.post(LOGIN_URL,
+          JSON.stringify({email: user, password: pwd}),
+          {
+            headers: { 'Content-Type': 'application/json'},
+            withCredentials: true
+          }
+      );
+      console.log(JSON.stringify(response?.data?.user?.firstName))
+      const accessToken = response?.data?.accessToken;
+      const roles = response?.data?.user?.roles[0].name;
+      const fname = response?.data?.user?.firstName;
+      const lname = response?.data?.user?.lastName;
+      const email = response?.data?.user?.email;
+       
+      setUser('');
+      setPwd('');
+      setSuccess(true);
+    } catch (error) {
+      
+    }
+
+  }
   const Full = styled.div`
     display: flex;
     flex-direction: column;
