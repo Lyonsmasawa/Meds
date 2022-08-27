@@ -1,10 +1,35 @@
-import React from 'react'
+import React, {useRef, useEffect, useState, useContext} from 'react'
 import styled from 'styled-components'
 import Footer from './Footer'
 import './logins.css'
+import AuthContext from '../context/AuthProvider'
 
 const Login = () => {
-  const [option, setOption] = React.useState(1);
+  const { setAuth } = useContext(AuthContext);
+  const [option, setOption] = useState(1);
+  const userRef = useRef();
+  const errRef = useRef();
+
+  const [user, setUser] = useState("");
+  const [pwd, setPwd] = useState("");
+  const [errMsg, setErrMsg] = useState("");
+  const [success, setSuccess] = useState(false);
+
+  useEffect(() => {
+    userRef.current.focus();
+  }, [])
+  
+  useEffect(() => {
+    setErrMsg('');
+  }, [user, pwd])
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    console.log(user, pwd);
+    setUser('');
+    setPwd('');
+    setSuccess(true);
+  }
 
   const Full = styled.div`
     display: flex;
@@ -14,6 +39,7 @@ const Login = () => {
     min-height: calc(100vh - 82px);
     margin-top: 82px; 
   `
+  
   const Login = styled.div`
         /* position: relative; */
         /* min-height: calc(100vh - 82px); */
@@ -45,56 +71,78 @@ const Login = () => {
   //   </Login>
   // )
   return (
-    <Full>
-      <Login>
-          <div className="alls">
-            <div className="container">
-              <br />
-              <img src="/images/logo2.png" alt="" style={{opacity: ".9"}}/>
-              <hr />
-              <ul className="options">
-                <li className={option === 1 ? "active" : ""} onClick={() => setOption(1)}>
-                  Sign in
-                </li>
-                <li className={option === 3 ? "active" : ""} onClick={() => setOption(3)}>
-                  Forgot
-                </li>
-              </ul>
-            </div>
-    
-            <form className="account-form" onSubmit={(evt) => evt.preventDefault()}>
-              <div
-                className={
-                  "account-form-fields " +
-                  (option === 1 ? "sign-in" : option === 2 ? "sign-up" : "forgot")
-                }
-              >
-                <input id="email" name="email" type="email" placeholder="E-mail" required />
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  placeholder="Password"
-                  required={option === 1 || option === 2 ? true : false}
-                  disabled={option === 3 ? true : false}
-                />
-                <input
-                  id="repeat-password"
-                  name="repeat-password"
-                  type="password"
-                  placeholder="Repeat password"
-                  required={option === 2 ? true : false}
-                  disabled={option === 1 || option === 3 ? true : false}
-                />
-              </div>
-              <button className="btn-submit-form" type="submit">
-                {option === 1 ? "Sign in" : option === 2 ? "Sign up" : "Reset password"}
-              </button>
-            </form>
-          </div>
-      </Login>
-      <Footer />
-    </Full>
+   <>
+   {success ? (
+      <p style={{marginTop: "100px", color:"red"}}> logged in </p>
+   ) : (
+     <Full>
+     <Login>
+         <div className="alls">
+           <div className="container">
+             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive"></p>
+             <br />
+             <img src="/images/logo2.png" alt="" style={{opacity: ".9"}}/>
+             <hr />
+             <ul className="options">
+               <li className={option === 1 ? "active" : ""} onClick={() => setOption(1)}>
+                 Sign in
+               </li>
+               <li className={option === 3 ? "active" : ""} onClick={() => setOption(3)}>
+                 Forgot
+               </li>
+             </ul>
+           </div>
+   
+           <form className="account-form" onSubmit={handleSubmit}>
+             <div
+               className={
+                 "account-form-fields " +
+                 (option === 1 ? "sign-in" : option === 2 ? "sign-up" : "forgot")
+               }
+             >
+              
+               <input 
+               id="email" 
+               name="email" 
+               type="email" 
+               placeholder="E-mail" 
+               ref={userRef} 
+               autoComplete='off'
+               value={user}
+               onChange={(e) => setUser(e.target.value)}
+               required 
+               />
+               
+               <input
+                 id="password"
+                 name="password"
+                 type="password"
+                 placeholder="Password"
+                 required={option === 1 || option === 2 ? true : false}
+                 disabled={option === 3 ? true : false}
+                 onChange={(e) => setPwd(e.target.value)}
+                 value={pwd}
+               />
+               <input
+                 id="repeat-password"
+                 name="repeat-password"
+                 type="password"
+                 placeholder="Repeat password"
+                 required={option === 2 ? true : false}
+                 disabled={option === 1 || option === 3 ? true : false}
+               />
+             </div>
+             <button className="btn-submit-form" type="submit">
+               {option === 1 ? "Sign in" : option === 2 ? "Sign up" : "Reset password"}
+             </button>
+           </form>
+         </div>
+     </Login>
+     <Footer />
+   </Full>
+   )
+   }
+   </>
 	);
 }
 
