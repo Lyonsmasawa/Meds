@@ -4,40 +4,47 @@ import Footer from './Footer'
 import './logins.css'
 import AuthContext from '../context/AuthProvider'
 import axios from '../api/axios'
+import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useNavigate, useLocation } from 'react-router-dom'
 
 const LOGIN_URL = '/auth/login'
-
+const EMAIL_REGEX = /^\S+@\S+\.\S+$/;
 
 const Login = () => {
-  const effectRan = useRef(false)
+  const navigate = useNavigate();
   const { setAuth } = useContext(AuthContext);
   const [option, setOption] = useState(1);
-  const userRef = useRef();
+  const emailRef = useRef();
   const errRef = useRef();
 
   const [user, setUser] = useState("");
-  const [pwd, setPwd] = useState("");
+  const [email, setEmail] = useState('');
+  const [validEmail, setValidEmail] = useState(false);
+  const [emailFocus, setEmailFocus] = useState(false);
+
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
 
-  useEffect(() => {
-    if(effectRan.current === false){
-      userRef.current.focus();
-    }
+  const [pwd, setPwd] = useState('');
+  const [pwdFocus, setPwdFocus] = useState(false);
 
-    return () => {
-      console.log("122")
-      effectRan.current = true;
-    }
+  useEffect(() => {
+    emailRef.current.focus();
   }, [])
+
+  useEffect(() => {
+    const result = EMAIL_REGEX.test(email)
+    setValidEmail(result)
+  }, [email])
   
   useEffect(() => {
     setErrMsg('');
-  }, [user, pwd])
+  }, [email, pwd])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(user, pwd);
+    console.log(email, pwd);
 
     try {
       const response = await axios.post(LOGIN_URL,
@@ -55,9 +62,8 @@ const Login = () => {
       const email = response?.data?.user?.email;
       const createdAt = response?.data?.user?.createdAt;
 
-      setAuth({user, pwd, accessToken, roles, fname, lname, email, createdAt})
-       
-      setUser('');
+      setAuth({pwd, accessToken, roles, fname, lname, email, createdAt});
+      setEmail('');
       setPwd('');
       setSuccess(true);
     } catch (err) {
@@ -116,70 +122,77 @@ const Login = () => {
   return (
    <>
    {success ? (
-      <p style={{marginTop: "100px", color:"red"}}> logged in </p>
+      navigate("/")
    ) : (
      <Full>
      <Login>
-         <div className="alls">
-           <div className="container">
-             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive"></p>
-             <br />
-             <img src="/images/logo2.png" alt="" style={{opacity: ".9"}}/>
-             <hr />
-             <ul className="options">
-               <li className={option === 1 ? "active" : ""} onClick={() => setOption(1)}>
-                 Sign in
-               </li>
-               <li className={option === 3 ? "active" : ""} onClick={() => setOption(3)}>
-                 Forgot
-               </li>
-             </ul>
-           </div>
-   
-           <form className="account-form" onSubmit={handleSubmit}>
-             <div
-               className={
-                 "account-form-fields " +
-                 (option === 1 ? "sign-in" : option === 2 ? "sign-up" : "forgot")
-               }
-             >
-              
-               <input 
-               id="email" 
-               name="email" 
-               type="email" 
-               placeholder="E-mail" 
-               ref={userRef} 
-               autoComplete='off'
-               value={user}
-               onChange={(e) => setUser(e.target.value)}
-               required 
-               />
-               
-               <input
-                 id="password"
-                 name="password"
-                 type="password"
-                 placeholder="Password"
-                 required={option === 1 || option === 2 ? true : false}
-                 disabled={option === 3 ? true : false}
-                 onChange={(e) => setPwd(e.target.value)}
-                 value={pwd}
-               />
-               <input
-                 id="repeat-password"
-                 name="repeat-password"
-                 type="password"
-                 placeholder="Repeat password"
-                 required={option === 2 ? true : false}
-                 disabled={option === 1 || option === 3 ? true : false}
-               />
-             </div>
-             <button className="btn-submit-form" type="submit">
-               {option === 1 ? "Sign in" : option === 2 ? "Sign up" : "Reset password"}
-             </button>
-           </form>
-         </div>
+     <div className="alls">
+            <div className="container">
+              <br />
+              <img src="/images/logo2.png" alt="" style={{opacity: ".9"}}/>
+              <hr />
+              <ul className="options">
+                <li className={option === 1 ? "active" : ""} onClick={() => setOption(1)}>
+                  Sign in
+                </li>
+                <li className={option === 3 ? "active" : ""} onClick={() => setOption(3)}>
+                  Forgot
+                </li>
+              </ul>
+            </div>
+            <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
+            <form className="account-form" onSubmit={handleSubmit} style={{color: "white", textAlign: "left"}}>
+              <div
+                className={
+                  "account-form-fields " +
+                  (option === 1 ? "sign-in" : option === 2 ? "sign-up" : "forgot")
+                }
+                > 
+
+                <label htmlFor="email" style={{color: "white", textAlign: "left"}}>
+                    Email:
+                    <FontAwesomeIcon icon={faCheck} className={validEmail ? "valid" : "hide"} />
+                    <FontAwesomeIcon icon={faTimes} className={validEmail || !email ? "hide" : "invalid"} />
+                </label>
+                <input id="email" name="email" type="email" placeholder="E-mail" required 
+                  ref={emailRef}
+                  autoComplete='off'
+                  onChange={(e) => {setUser(e.target.value)
+                    setEmail(e.target.value)
+                  }}
+                  value={email}
+                  aria-invalid={validEmail ? "false" : "true"}
+                  aria-describedby="enote"
+                  onFocus={() => setEmailFocus(true)}
+                  onBlur={() => setEmailFocus(false)}
+                />
+                <p id="enote" className={emailFocus && !validEmail ? "instructions" : "offscreen"}>
+                      <FontAwesomeIcon icon={faInfoCircle} />
+                       format: "abc@xyz.com"
+                </p>
+
+                <label htmlFor="password" style={option === 3 ? {display : "none"} : {display : "initial"}}>
+                    Password:
+                </label>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  placeholder="Password"
+                  onChange={(e) => setPwd(e.target.value)}
+                  value={pwd}
+                  required
+                  onFocus={() => setPwdFocus(true)}
+                  onBlur={() => setPwdFocus(false)}
+                  style={option === 3 ? {display : "none"} : {display : "initial"}}
+                />
+
+              </div>
+              <button className="btn-submit-form" type="submit">
+                {option === 1 ? "Sign in" : option === 2 ? "Sign up" : "Reset password"}
+              </button>
+            </form>
+          </div>
      </Login>
      <Footer />
    </Full>

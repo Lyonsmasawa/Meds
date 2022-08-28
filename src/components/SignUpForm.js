@@ -4,13 +4,17 @@ import Footer from './Footer'
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './logins.css'
+import axios from '../api/axios';
+import Home from './Home';
+import { useNavigate } from 'react-router-dom';
 
 const NAME_REGEX = /^[a-zA-Z][a-zA-Z]{1,23}$/;
 const EMAIL_REGEX = /^\S+@\S+\.\S+$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-const REGISTER_URL = '/auth/register';
+const REGISTER_URL = '/auth/signup';
 
 const SignUpForm = () => {
+  const navigate = useNavigate()
   const [option, setOption] = React.useState(2);
   const fnameRef = useRef();
   const lnameRef = useRef();
@@ -75,6 +79,45 @@ const SignUpForm = () => {
       setErrMsg('');
   }, [fname, lname, email, pwd, matchPwd])
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // if button enabled with JS hack
+    const v1 = EMAIL_REGEX.test(email);
+    const v2 = PWD_REGEX.test(pwd);
+    if (!v1 || !v2) {
+      setErrMsg("Invalid Entry");
+        return;
+      }
+
+      try {
+        const response = await axios.post(REGISTER_URL,
+            JSON.stringify({firstName: fname, lastName: lname, email, role, password: pwd, confirmPassword: matchPwd }),
+            {
+                headers: { 'Content-Type': 'application/json' },
+                withCredentials: true
+            }
+        );
+        console.log(JSON.stringify(response))
+        setSuccess(true);
+        //clear state and controlled inputs
+        //need value attrib on inputs for this
+        setEmail('');
+        setFname('');
+        setRole('');
+        setLname('');
+        setPwd('');
+        setMatchPwd('');
+    } catch (err) {
+        if (!err?.response) {
+            setErrMsg('No Server Response');
+        } else if (err.response?.status === 409) {
+            setErrMsg('Email already exists');
+        } else {
+            setErrMsg('Registration Failed')
+        }
+        errRef.current.focus(); //for screen readers
+    }
+  }
   const Full = styled.div`
     display: flex;
     flex-direction: column;
@@ -114,7 +157,9 @@ const SignUpForm = () => {
   //   </SignUpForm>
   // )
   return (
-    <Full>
+   <>
+    {success ? navigate('/') : (
+      <Full>
       <SignUpForm>
           <div className="alls">
             <div className="container">
@@ -134,7 +179,7 @@ const SignUpForm = () => {
               </ul>
             </div>
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-            <form className="account-form" onSubmit={(evt) => evt.preventDefault()} style={{color: "white", textAlign: "left"}}>
+            <form className="account-form" onSubmit={handleSubmit} style={{color: "white", textAlign: "left"}}>
               <div
                 className={
                   "account-form-fields " +
@@ -163,7 +208,7 @@ const SignUpForm = () => {
                 />
                 <p id="uidnote" className={fnameFocus && fname && !validFname ? "instructions" : "offscreen"} style={{textAlign: "left"}}>
                     <FontAwesomeIcon icon={faInfoCircle} />
-                    3 to 24 characters.<br /><FontAwesomeIcon icon={faInfoCircle} />
+                    2 to 24 characters.<br /><FontAwesomeIcon icon={faInfoCircle} />
                     Use Letters only.<br />
                 </p>
 
@@ -189,7 +234,7 @@ const SignUpForm = () => {
                 />
                 <p id="lnote" className={lnameFocus && lname && !validLname ? "instructions" : "offscreen"} style={option === 1 || option === 3 ? {display : "none"} : { textAlign: "left"}}>
                     <FontAwesomeIcon icon={faInfoCircle} />
-                    3 to 24 characters.<br /><FontAwesomeIcon icon={faInfoCircle} />
+                    2 to 24 characters.<br /><FontAwesomeIcon icon={faInfoCircle} />
                     Use Letters only.<br />
                 </p>
 
@@ -220,9 +265,11 @@ const SignUpForm = () => {
                   name="role" 
                   type="text" 
                   placeholder="CAREGIVER or PROVIDER" 
-                  
+                  onChange={(e) => setRole(e.target.value)}
+                  value={role}
                   required
-
+                  onFocus={() => setRoleFocus(true)}
+                  onBlur={() => setRoleFocus(false)}
                 />
 
                 <label htmlFor="password" style={option === 3 ? {display : "none"} : {display : "initial"}}>
@@ -256,7 +303,7 @@ const SignUpForm = () => {
                             <FontAwesomeIcon icon={faCheck} className={validMatch && matchPwd ? "valid" : "hide"} />
                             <FontAwesomeIcon icon={faTimes} className={validMatch || !matchPwd ? "hide" : "invalid"} />
                         </label>
-                        <input style={option === 1 || option === 3 ? {display : "none"} : {color: "white", textAlign: "left"}}
+                        <input style={option === 1 || option === 3 ? {display : "none"} : {display: "initial"}}
                             type="password"
                             id="confirm_pwd"
                             onChange={(e) => setMatchPwd(e.target.value)}
@@ -280,6 +327,8 @@ const SignUpForm = () => {
       </SignUpForm>
       <Footer />
     </Full>
+    ) } 
+   </>
 	);
 }
 
