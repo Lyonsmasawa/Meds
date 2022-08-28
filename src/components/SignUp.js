@@ -1,45 +1,11 @@
-import React, { useRef, useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Footer from './Footer'
 import { Link, useNavigate } from "react-router-dom"
 import './login.css'
 
-const USER_REGEX = /^[a-zA-Z][a-zA-Z]{1,23}$/;
-const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-const REGISTER_URL = '/auth/register';
-
 const SignUp = () => {
-  const userRef = useRef();
-  const errRef = useRef();
-
-  const [user, setUser] = useState('');
-  const [validEmail, setValidEmail] = useState(false);
-  const [userFocus, setUserFocus] = useState(false);
-
-  const [fname, setfname] = useState('');
-  const [validFname, setValidFname] = useState(false);
-  const [fnameFocus, setFnameFocus] = useState(false);
-
-  const [lname, setlname] = useState('');
-  const [validLname, setValidLname] = useState(false);
-  const [lnameFocus, setLnameFocus] = useState(false);
-
-  const [role, setrole] = useState('');
-  const [validRole, setValidRole] = useState(false);
-  const [roleFocus, setRoleFocus] = useState(false);
-
-  const [pwd, setPwd] = useState('');
-  const [validPwd, setValidPwd] = useState(false);
-  const [pwdFocus, setPwdFocus] = useState(false);
-
-  const [matchPwd, setMatchPwd] = useState('');
-  const [validMatch, setValidMatch] = useState(false);
-  const [matchFocus, setMatchFocus] = useState(false);
-
-  const [errMsg, setErrMsg] = useState('');
-  const [success, setSuccess] = useState(false);
-
-  const Login = styled.div`
+   const Login = styled.div`
         position: relative;
         min-height: calc(100vh - 82px);
         /* width: 100% !important; */
@@ -61,7 +27,7 @@ const SignUp = () => {
             <br />
               <div className="con">
                 <div className="icon">
-                  <i className="fa fas fa-user" aria-hidden="true"></i>
+                  <i className="fa fas fa-email" aria-hidden="true"></i>
                 </div>
               </div>
               <h3 style={{ fontWeight: "700" }}>Caregiver</h3>
@@ -72,7 +38,7 @@ const SignUp = () => {
                 Create a unique career profile with Express Team Care
               </p>
 
-              <button className="btn " id="signb"> <Link to="/signup"> Sign Up as Caregiver </Link></button>
+              <button className="btn " id="signb"> <Link to="/signupform"> Sign Up as Caregiver </Link></button>
             </div>
           </div>
           <div className="col">
@@ -90,7 +56,7 @@ const SignUp = () => {
                 Advertise and search with Express Team Care
               </p>
              
-             <button className="btn " id="signb"> <Link to="/signup"> Sign Up as Recruiter</Link></button>
+             <button className="btn " id="signb"> <Link to="/signupform"> Sign Up as Recruiter</Link></button>
             </div>
           </div>
         </div>
