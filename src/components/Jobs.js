@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from '../api/axios'
 
-const Providers = () => {
+const Jobs = () => {
     const [jobs,  setJobs] = useState()
 
     useEffect(() => {
@@ -29,7 +29,7 @@ const Providers = () => {
     
 
   return (
-    <article>
+    <article style={{color: "black", marginTop: "100px"}}>
         <h2>list of Jobs</h2>
         {jobs?.length ?
             <ul>
@@ -41,4 +41,4 @@ const Providers = () => {
   )
 }
 
-export default Providers
+export default Jobs

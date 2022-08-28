@@ -9,6 +9,7 @@ import SignUpForm from './components/SignUpForm';
 import Layout from './components/Layout';
 import Careers from './components/Careers';
 import RequireAuth from './components/RequireAuth';
+import Jobs from './components/Jobs';
 
 const ROLES = {
   'caregiver': "CAREGIVER",
@@ -28,9 +29,14 @@ function App() {
             <Route path='/recruiters' element={ <Recruiters /> }></Route>
             <Route path='/caregivers' element={ <Caregivers /> }></Route>
 
-            <Route element={ <RequireAuth allowedRoles={[ROLES.caregiver]} /> }>
+            <Route element={ <RequireAuth  /> }>
               <Route path='/careers' element={ <Careers /> } />
             </Route>
+            {/* allowedRoles={[ROLES.caregiver]} */}
+            <Route element={ <RequireAuth /> }>
+              <Route path='/jobs' element={ <Jobs /> } />
+            </Route>
+
             <Route path="/unauthorized">Unauthorized to be here</Route>
 
             <Route path="*">Oops! page not found.</Route>
