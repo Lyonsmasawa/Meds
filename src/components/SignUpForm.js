@@ -134,14 +134,14 @@ const SignUpForm = () => {
               </ul>
             </div>
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-            <form className="account-form" onSubmit={(evt) => evt.preventDefault()}>
+            <form className="account-form" onSubmit={(evt) => evt.preventDefault()} style={{color: "white", textAlign: "left"}}>
               <div
                 className={
                   "account-form-fields " +
                   (option === 1 ? "sign-in" : option === 2 ? "sign-up" : "forgot")
                 }
                 > 
-                <label htmlFor="fname" style={{color: "white", textAlign: "left"}}>
+                <label htmlFor="firstname" style={option === 1 || option === 3 ? {display : "none"} : {color: "white", textAlign: "left"}}>
                     First Name:
                     <FontAwesomeIcon icon={faCheck} className={validFname ? "valid" : "hide"} />
                     <FontAwesomeIcon icon={faTimes} className={validFname || !fname ? "hide" : "invalid"} />
@@ -167,7 +167,7 @@ const SignUpForm = () => {
                     Use Letters only.<br />
                 </p>
 
-                <label htmlFor="fname" style={{color: "white", textAlign: "left"}}>
+                <label htmlFor="lastname" style={option === 1 || option === 3 ? {display : "none"} : {color: "white", textAlign: "left"}}>
                     Last Name:
                     <FontAwesomeIcon icon={faCheck} className={validLname ? "valid" : "hide"} />
                     <FontAwesomeIcon icon={faTimes} className={validLname || !lname ? "hide" : "invalid"} />
@@ -187,16 +187,34 @@ const SignUpForm = () => {
                 onFocus={() => setLnameFocus(true)}
                 onBlur={() => setLnameFocus(false)}
                 />
-                <p id="lnote" className={lnameFocus && lname && !validLname ? "instructions" : "offscreen"} style={{textAlign: "left"}}>
+                <p id="lnote" className={lnameFocus && lname && !validLname ? "instructions" : "offscreen"} style={option === 1 || option === 3 ? {display : "none"} : { textAlign: "left"}}>
                     <FontAwesomeIcon icon={faInfoCircle} />
                     3 to 24 characters.<br /><FontAwesomeIcon icon={faInfoCircle} />
                     Use Letters only.<br />
                 </p>
 
+                <label htmlFor="email" style={{color: "white", textAlign: "left"}}>
+                    Email:
+                    <FontAwesomeIcon icon={faCheck} className={validEmail ? "valid" : "hide"} />
+                    <FontAwesomeIcon icon={faTimes} className={validEmail || !email ? "hide" : "invalid"} />
+                </label>
                 <input id="email" name="email" type="email" placeholder="E-mail" required 
-                
+                  autoComplete='off'
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                  aria-invalid={validEmail ? "false" : "true"}
+                  aria-describedby="enote"
+                  onFocus={() => setEmailFocus(true)}
+                  onBlur={() => setEmailFocus(false)}
                 />
+                <p id="enote" className={emailFocus && !validEmail ? "instructions" : "offscreen"}>
+                      <FontAwesomeIcon icon={faInfoCircle} />
+                       format: "abc@xyz.com"
+                </p>
 
+                <label htmlFor="role" style={option === 1 || option === 3 ? {display : "none"} : {color: "white", textAlign: "left"}}>
+                    Role:
+                </label>
                 <input style={option === 1 || option === 3 ? {display : "none"} : {display : "initial"}} 
                   id="role" 
                   name="role" 
@@ -207,25 +225,52 @@ const SignUpForm = () => {
 
                 />
 
-
+                <label htmlFor="password" style={option === 3 ? {display : "none"} : {display : "initial"}}>
+                    Password:
+                    <FontAwesomeIcon icon={faCheck} className={validPwd ? "valid" : "hide"} />
+                    <FontAwesomeIcon icon={faTimes} className={validPwd || !pwd ? "hide" : "invalid"} />
+                </label>
                 <input
                   id="password"
                   name="password"
                   type="password"
                   placeholder="Password"
-                  required={option === 1 || option === 2 ? true : false}
-                  disabled={option === 3 ? true : false}
+                  onChange={(e) => setPwd(e.target.value)}
+                  value={pwd}
+                  required
+                  aria-invalid={validPwd ? "false" : "true"}
+                  aria-describedby="pwdnote"
+                  onFocus={() => setPwdFocus(true)}
+                  onBlur={() => setPwdFocus(false)}
                   style={option === 3 ? {display : "none"} : {display : "initial"}}
                 />
-                <input
-                  id="repeat-password"
-                  name="repeat-password"
-                  type="password"
-                  placeholder="Repeat password"
-                  required={option === 2 ? true : false}
-                  disabled={option === 1 || option === 3 ? true : false}
-                  style={option === 1 || option === 3 ? {display : "none"} : {display : "initial"}}
-                />
+
+                  <p id="pwdnote" className={pwdFocus && !validPwd ? "instructions" : "offscreen"}>
+                      <FontAwesomeIcon icon={faInfoCircle} />
+                      8 to 24 characters.<br /><FontAwesomeIcon icon={faInfoCircle} />
+                      Must include uppercase and lowercase letters, a number and a special character.<br />
+                      <FontAwesomeIcon icon={faInfoCircle} />Allowed special characters: <span aria-label="exclamation mark">!</span> <span aria-label="at symbol">@</span> <span aria-label="hashtag">#</span> <span aria-label="dollar sign">$</span> <span aria-label="percent">%</span>
+                  </p>
+                  <label htmlFor="confirm_pwd" style={option === 1 || option === 3 ? {display : "none"} : {color: "white", textAlign: "left"}}>
+                            Confirm Password:
+                            <FontAwesomeIcon icon={faCheck} className={validMatch && matchPwd ? "valid" : "hide"} />
+                            <FontAwesomeIcon icon={faTimes} className={validMatch || !matchPwd ? "hide" : "invalid"} />
+                        </label>
+                        <input style={option === 1 || option === 3 ? {display : "none"} : {color: "white", textAlign: "left"}}
+                            type="password"
+                            id="confirm_pwd"
+                            onChange={(e) => setMatchPwd(e.target.value)}
+                            value={matchPwd}
+                            required
+                            aria-invalid={validMatch ? "false" : "true"}
+                            aria-describedby="confirmnote"
+                            onFocus={() => setMatchFocus(true)}
+                            onBlur={() => setMatchFocus(false)}
+                        />
+                        <p id="confirmnote" className={matchFocus && !validMatch ? "instructions" : "offscreen"}>
+                            <FontAwesomeIcon icon={faInfoCircle} />
+                            Must match the first password input field.
+                        </p>
               </div>
               <button className="btn-submit-form" type="submit">
                 {option === 1 ? "Sign in" : option === 2 ? "Sign up" : "Reset password"}
