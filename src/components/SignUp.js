@@ -13,8 +13,20 @@ const SignUp = () => {
   const errRef = useRef();
 
   const [user, setUser] = useState('');
-  const [validName, setValidName] = useState(false);
+  const [validEmail, setValidEmail] = useState(false);
   const [userFocus, setUserFocus] = useState(false);
+
+  const [fname, setfname] = useState('');
+  const [validFname, setValidFname] = useState(false);
+  const [fnameFocus, setFnameFocus] = useState(false);
+
+  const [lname, setlname] = useState('');
+  const [validLname, setValidLname] = useState(false);
+  const [lnameFocus, setLnameFocus] = useState(false);
+
+  const [role, setrole] = useState('');
+  const [validRole, setValidRole] = useState(false);
+  const [roleFocus, setRoleFocus] = useState(false);
 
   const [pwd, setPwd] = useState('');
   const [validPwd, setValidPwd] = useState(false);

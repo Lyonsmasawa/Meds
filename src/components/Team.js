@@ -7,7 +7,7 @@ const Team = () => {
         <div className="wrapper" style={{}}>
             <div className="row" style={{ flex: "2", borderRadius: "8px", marginLeft: "1rem", marginRight: "1rem", backgroundColor:"#557A95",  padding: "60px", color: "white",}}>
                 <h2 style={{color: "white", fontWeight: "bolder", marginBottom:"2rem"}}>What we offer you as a caregiver. . .</h2>
-                <div className="col" className="coll" >
+                <div className="col coll" >
                     <h5>CV Writing - 90%</h5>
                     <div className="progress red">
                         <div className="progress-bar" style={{width: "90%",  backgroundColor:"#2E3C5B"}}>
