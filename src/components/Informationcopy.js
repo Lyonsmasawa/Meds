@@ -56,7 +56,7 @@ const InformationCopy = () => {
                     <img src="/images/caregivers.png" alt="" />
             </div>
             <div className="why">
-            <h4 class="mt-5 mb-2"  style={{color: "#557A95", fontWeight: "bold", fontSize:"30px"}}>Why employers love us</h4><br/>
+            <h4 className="mt-5 mb-2"  style={{color: "#557A95", fontWeight: "bold", fontSize:"30px"}}>Why employers love us</h4><br/>
                 <ul>
                     <li> <strong> Browse</strong> through caregivers' profiles based on category and salary expectations</li>
                     <li> Find <strong>qualified</strong> candidates for your company.</li>

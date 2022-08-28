@@ -13,7 +13,7 @@ const Footer = () => {
                 </div>
 
                 <div className="col-xs-6 col-md-3">
-                    <h6 class="text-uppercase font-weight-bold"><strong>Services</strong></h6>
+                    <h6 className="text-uppercase font-weight-bold"><strong>Services</strong></h6>
                     <div className="p-3">
                         <li>Get Hired</li>
                         <li>Find Caregivers</li>
@@ -21,12 +21,12 @@ const Footer = () => {
                 </div>
 
                 <div className="col-xs-6 col-md-3">
-                    <h6 class="text-uppercase font-weight-bold"><strong>Contact</strong></h6>
+                    <h6 className="text-uppercase font-weight-bold"><strong>Contact</strong></h6>
                     <div className="p-3">
-                        <p><i class="fas fa-home mr-3"></i> Westlands, Nairobi 10012, Kenya</p>
-                        <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
-                        <p><i class="fas fa-phone mr-3"></i> + 254 567 884 444</p>
-                        <p><i class="fas fa-print mr-3"></i> + 254 567 894 444</p>
+                        <p><i className="fas fa-home mr-3"></i> Westlands, Nairobi 10012, Kenya</p>
+                        <p><i className="fas fa-envelope mr-3"></i> info@gmail.com</p>
+                        <p><i className="fas fa-phone mr-3"></i> + 254 567 884 444</p>
+                        <p><i className="fas fa-print mr-3"></i> + 254 567 894 444</p>
                     </div>
                 </div>
             </div>

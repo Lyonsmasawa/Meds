@@ -32,18 +32,18 @@ const Container = styled.main`
 const Recruiters = () => {
   return (
     <Container>
-    <div class="container ">
-        <div class="row align-items-start" style={{ color: "#557A95" }}>
-            <div class="col-md-6">
-            <div class="row row-cols-2 container-fluid">
-                <div class="col one container-fluid"><img src="/images/care4-removebg-preview.png" class="img-fluid" alt="" style={{visibility: "hidden"}} /></div>
-                <div class="col two container-fluid"><img src="/images/logo3.png" class="img-fluid" alt="" /></div>
-                <div class="col two container-fluid"><img src="/images/caree1-removebg-preview.png" class="img-fluid" alt="" /></div>
-                <div class="col one container-fluid"><img src="/images/care4-removebg-preview.png" class="img-fluid" alt="" /></div>
+    <div className="container ">
+        <div className="row align-items-start" style={{ color: "#557A95" }}>
+            <div className="col-md-6">
+            <div className="row row-cols-2 container-fluid">
+                <div className="col one container-fluid"><img src="/images/care4-removebg-preview.png" className="img-fluid" alt="" style={{visibility: "hidden"}} /></div>
+                <div className="col two container-fluid"><img src="/images/logo3.png" className="img-fluid" alt="" /></div>
+                <div className="col two container-fluid"><img src="/images/caree1-removebg-preview.png" className="img-fluid" alt="" /></div>
+                <div className="col one container-fluid"><img src="/images/care4-removebg-preview.png" className="img-fluid" alt="" /></div>
             </div>
             </div>
-            <div class="col-md-6">
-            <div class="jobseekers">
+            <div className="col-md-6">
+            <div className="jobseekers">
                 <h3>MAKE A HIRE WE GOT THE REST</h3><br/>
                 <p>Looking to recruit a proficient caregiver for open job 
                 position in your agency.we connect you with several caregivers from diffrent places.How you go about hiring careproviders will partially depend on 
@@ -56,9 +56,9 @@ const Recruiters = () => {
                     <br/>
                     <p>Advertise your job posting for applicants on our page to apply.
                         View applicants & connect with the qualified candidate.</p>
-                <div class="row align-items-center" style={{paddingTop: "20px"}}>
-                <div class="col">
-                    <button type="button" class="btn" style={{backgroundColor:"#ff9329", fontWeight:"bold", color:"white", fontSize: "16px"}} routerLink=""><Link to="/signup"> Sign up now </Link></button>
+                <div className="row align-items-center" style={{paddingTop: "20px"}}>
+                <div className="col">
+                    <button type="button" className="btn" style={{backgroundColor:"#ff9329", fontWeight:"bold", color:"white", fontSize: "16px"}} routerLink=""><Link to="/signup"> Sign up now </Link></button>
                 </div>
                 </div>
             </div>

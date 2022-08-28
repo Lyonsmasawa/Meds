@@ -53,7 +53,7 @@ const Information = () => {
     <Info>
         <Information>
             <div className="why">
-                <h4 class="mt-5 mb-2" style={{color: "#557A95", fontWeight: "bold", fontSize:"30px"}}>Why caregivers love us</h4><br />
+                <h4 className="mt-5 mb-2" style={{color: "#557A95", fontWeight: "bold", fontSize:"30px"}}>Why caregivers love us</h4><br />
                     <ul>
                         <li> We help caregivers<strong> grow </strong>their careers & showcase their skills & qualifications to <strong> potential employers.</strong> </li>
                         <li> Say goodbye to cover letters - your profile is all you need. Your next job is<strong> one click </strong>away</li>
