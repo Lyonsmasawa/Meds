@@ -211,7 +211,7 @@ const SignOut = styled.div`
             <Link to="/" style={MenuLinks}><HomeWorkOutlined style={MenuIcon} /><Span>Home</Span></Link>
             <Link to="/caregivers" style={MenuLinks}><SupervisedUserCircleIcon style={MenuIcon} /><Span>Caregivers</Span></Link>
             <Link to="/recruiters" style={MenuLinks}><GroupAdd style={MenuIcon} /><Span>Recruiters</Span></Link>
-            <Link to="/" style={MenuLinks}><WorkOutline style={MenuIcon} /><Span>Careers</Span></Link>
+            <Link to="/careers" style={MenuLinks}><WorkOutline style={MenuIcon} /><Span>Careers</Span></Link>
             <Rotate><AcUnit /></Rotate>
         </NavMenu>
         <>

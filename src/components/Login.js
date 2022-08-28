@@ -6,7 +6,7 @@ import AuthContext from '../context/AuthProvider'
 import axios from '../api/axios'
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useNavigate, useLocation, Link } from 'react-router-dom'
 
 const LOGIN_URL = '/auth/login'
 const EMAIL_REGEX = /^\S+@\S+\.\S+$/;
@@ -14,6 +14,10 @@ const EMAIL_REGEX = /^\S+@\S+\.\S+$/;
 const Login = () => {
   const navigate = useNavigate();
   const { setAuth } = useContext(AuthContext);
+
+  const location = useLocation();
+  const from = location.state?.from|| "/"
+  console.log(from)
   const [option, setOption] = useState(1);
   const emailRef = useRef();
   const errRef = useRef();
@@ -24,7 +28,6 @@ const Login = () => {
   const [emailFocus, setEmailFocus] = useState(false);
 
   const [errMsg, setErrMsg] = useState("");
-  const [success, setSuccess] = useState(false);
 
   const [pwd, setPwd] = useState('');
   const [pwdFocus, setPwdFocus] = useState(false);
@@ -57,15 +60,17 @@ const Login = () => {
       console.log(JSON.stringify(response?.data?.user?.firstName))
       const accessToken = response?.data?.accessToken;
       const roles = response?.data?.user?.roles[0].name;
-      const fname = response?.data?.user?.firstName;
-      const lname = response?.data?.user?.lastName;
+      const fname =response?.data?.user?.firstName;
+      const lname = response?.data?.user?.lastName; 
       const email = response?.data?.user?.email;
       const createdAt = response?.data?.user?.createdAt;
 
       setAuth({pwd, accessToken, roles, fname, lname, email, createdAt});
       setEmail('');
       setPwd('');
-      setSuccess(true);
+      setEmail('');
+      setEmail('');
+      navigate(from, {replace: true})
     } catch (err) {
       if (!err?.response) {
         setErrMsg('No server response');
@@ -120,10 +125,6 @@ const Login = () => {
   //   </Login>
   // )
   return (
-   <>
-   {success ? (
-      navigate("/")
-   ) : (
      <Full>
      <Login>
      <div className="alls">
@@ -196,9 +197,6 @@ const Login = () => {
      </Login>
      <Footer />
    </Full>
-   )
-   }
-   </>
 	);
 }
 
