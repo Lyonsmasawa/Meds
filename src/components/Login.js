@@ -53,12 +53,24 @@ const Login = () => {
       const fname = response?.data?.user?.firstName;
       const lname = response?.data?.user?.lastName;
       const email = response?.data?.user?.email;
+      const createdAt = response?.data?.user?.createdAt;
+
+      setAuth({user, pwd, accessToken, roles, fname, lname, email, createdAt})
        
       setUser('');
       setPwd('');
       setSuccess(true);
-    } catch (error) {
-      
+    } catch (err) {
+      if (!err?.response) {
+        setErrMsg('No server response');
+      } else if (err.response?.status === 400) {
+        setErrMsg('missing username or password');
+      } else if (err.response?.status === 401) {
+        setErrMsg('unauthorized');
+      } else {
+        setErrMsg('login failed');
+      }
+      errRef.current.focus();
     }
 
   }
